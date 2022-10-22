@@ -9,27 +9,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .rodata       00000d88  08015a0c  08015a0c  00025a0c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08016794  08016794  000302dc  2**0
+  3 .ARM.extab    00000000  08016794  08016794  000302e0  2**0
                   CONTENTS
   4 .ARM          00000008  08016794  08016794  00026794  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  0801679c  0801679c  000302dc  2**0
+  5 .preinit_array 00000000  0801679c  0801679c  000302e0  2**0
                   CONTENTS, ALLOC, LOAD, DATA
   6 .init_array   00000004  0801679c  0801679c  0002679c  2**2
                   CONTENTS, ALLOC, LOAD, DATA
   7 .fini_array   00000004  080167a0  080167a0  000267a0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         000002dc  20000000  080167a4  00030000  2**2
+  8 .data         000002e0  20000000  080167a4  00030000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00001388  200002dc  08016a80  000302dc  2**2
+  9 .bss          00001388  200002e0  08016a84  000302e0  2**2
                   ALLOC
- 10 ._user_heap_stack 00002804  20001664  08016a80  00031664  2**0
+ 10 ._user_heap_stack 00002800  20001668  08016a84  00031668  2**0
                   ALLOC
- 11 .ARM.attributes 00000028  00000000  00000000  000302dc  2**0
+ 11 .ARM.attributes 00000028  00000000  00000000  000302e0  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0003eda0  00000000  00000000  00030304  2**0
+ 12 .debug_info   0003eda0  00000000  00000000  00030308  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 000059f7  00000000  00000000  0006f0a4  2**0
+ 13 .debug_abbrev 000059f7  00000000  00000000  0006f0a8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  14 .debug_aranges 000033f8  00000000  00000000  00074aa0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -63,7 +63,7 @@ Disassembly of section .text:
  80000d6:	2301      	movs	r3, #1
  80000d8:	7023      	strb	r3, [r4, #0]
  80000da:	bd10      	pop	{r4, pc}
- 80000dc:	200002dc 	.word	0x200002dc
+ 80000dc:	200002e0 	.word	0x200002e0
  80000e0:	00000000 	.word	0x00000000
  80000e4:	080159f4 	.word	0x080159f4
 
@@ -79,7 +79,7 @@ Disassembly of section .text:
  80000f8:	bd10      	pop	{r4, pc}
  80000fa:	46c0      	nop			; (mov r8, r8)
  80000fc:	00000000 	.word	0x00000000
- 8000100:	200002e0 	.word	0x200002e0
+ 8000100:	200002e4 	.word	0x200002e4
  8000104:	080159f4 	.word	0x080159f4
 
 08000108 <__gnu_thumb1_case_shi>:
@@ -2736,7 +2736,7 @@ int main(void)
  8001566:	c303      	stmia	r3!, {r0, r1}
  8001568:	e7f5      	b.n	8001556 <main+0x22>
  800156a:	46c0      	nop			; (mov r8, r8)
- 800156c:	20000b40 	.word	0x20000b40
+ 800156c:	20000b44 	.word	0x20000b44
 
 08001570 <SystemClock_Config>:
 /**
@@ -2962,7 +2962,7 @@ static void MX_CRC_Init(void)
  80016a2:	46bd      	mov	sp, r7
  80016a4:	bd80      	pop	{r7, pc}
  80016a6:	46c0      	nop			; (mov r8, r8)
- 80016a8:	20000ab8 	.word	0x20000ab8
+ 80016a8:	20000abc 	.word	0x20000abc
  80016ac:	40023000 	.word	0x40023000
 
 080016b0 <MX_RTC_Init>:
@@ -3112,7 +3112,7 @@ static void MX_RTC_Init(void)
  800176a:	46bd      	mov	sp, r7
  800176c:	b006      	add	sp, #24
  800176e:	bd80      	pop	{r7, pc}
- 8001770:	20000adc 	.word	0x20000adc
+ 8001770:	20000ae0 	.word	0x20000ae0
  8001774:	40002800 	.word	0x40002800
 
 08001778 <MX_TIM3_Init>:
@@ -3231,7 +3231,7 @@ void MX_TIM3_Init(void)
  8001812:	b006      	add	sp, #24
  8001814:	bd80      	pop	{r7, pc}
  8001816:	46c0      	nop			; (mov r8, r8)
- 8001818:	20000b00 	.word	0x20000b00
+ 8001818:	20000b04 	.word	0x20000b04
  800181c:	40000400 	.word	0x40000400
  8001820:	0000ffff 	.word	0x0000ffff
 
@@ -3715,7 +3715,7 @@ void DMA1_Channel4_5_6_7_IRQHandler(void)
  8001a1e:	46bd      	mov	sp, r7
  8001a20:	bd80      	pop	{r7, pc}
  8001a22:	46c0      	nop			; (mov r8, r8)
- 8001a24:	20000dc8 	.word	0x20000dc8
+ 8001a24:	20000dcc 	.word	0x20000dcc
 
 08001a28 <TIM3_IRQHandler>:
 
@@ -3741,7 +3741,7 @@ void TIM3_IRQHandler(void)
  8001a36:	46bd      	mov	sp, r7
  8001a38:	bd80      	pop	{r7, pc}
  8001a3a:	46c0      	nop			; (mov r8, r8)
- 8001a3c:	20000b00 	.word	0x20000b00
+ 8001a3c:	20000b04 	.word	0x20000b04
 
 08001a40 <BSP_I2C1_Init>:
 /**
@@ -3839,9 +3839,9 @@ int32_t BSP_I2C1_Init(void)
  8001aaa:	46bd      	mov	sp, r7
  8001aac:	b002      	add	sp, #8
  8001aae:	bd80      	pop	{r7, pc}
- 8001ab0:	20000b48 	.word	0x20000b48
+ 8001ab0:	20000b4c 	.word	0x20000b4c
  8001ab4:	40005400 	.word	0x40005400
- 8001ab8:	20000b94 	.word	0x20000b94
+ 8001ab8:	20000b98 	.word	0x20000b98
 
 08001abc <BSP_I2C1_DeInit>:
 /**
@@ -3903,8 +3903,8 @@ int32_t BSP_I2C1_DeInit(void)
  8001afe:	46bd      	mov	sp, r7
  8001b00:	b002      	add	sp, #8
  8001b02:	bd80      	pop	{r7, pc}
- 8001b04:	20000b94 	.word	0x20000b94
- 8001b08:	20000b48 	.word	0x20000b48
+ 8001b04:	20000b98 	.word	0x20000b98
+ 8001b08:	20000b4c 	.word	0x20000b4c
 
 08001b0c <BSP_I2C1_WriteReg>:
   * @param  Length Data Length
@@ -3984,7 +3984,7 @@ int32_t BSP_I2C1_WriteReg(uint16_t DevAddr, uint16_t Reg, uint8_t *pData, uint16
  8001b7a:	b006      	add	sp, #24
  8001b7c:	bdb0      	pop	{r4, r5, r7, pc}
  8001b7e:	46c0      	nop			; (mov r8, r8)
- 8001b80:	20000b48 	.word	0x20000b48
+ 8001b80:	20000b4c 	.word	0x20000b4c
 
 08001b84 <BSP_I2C1_ReadReg>:
   * @param  pData  Pointer to data buffer to read
@@ -4064,7 +4064,7 @@ int32_t  BSP_I2C1_ReadReg(uint16_t DevAddr, uint16_t Reg, uint8_t *pData, uint16
  8001bf2:	b006      	add	sp, #24
  8001bf4:	bdb0      	pop	{r4, r5, r7, pc}
  8001bf6:	46c0      	nop			; (mov r8, r8)
- 8001bf8:	20000b48 	.word	0x20000b48
+ 8001bf8:	20000b4c 	.word	0x20000b4c
 
 08001bfc <BSP_GetTick>:
 
@@ -4431,7 +4431,7 @@ void *_sbrk(ptrdiff_t incr)
  8001de2:	bd80      	pop	{r7, pc}
  8001de4:	20005000 	.word	0x20005000
  8001de8:	00002000 	.word	0x00002000
- 8001dec:	20000b98 	.word	0x20000b98
+ 8001dec:	20000b9c 	.word	0x20000b9c
  8001df0:	20001668 	.word	0x20001668
 
 08001df4 <SystemInit>:
@@ -4542,13 +4542,13 @@ LoopForever:
   ldr r0, =_sdata
  8001e3c:	20000000 	.word	0x20000000
   ldr r1, =_edata
- 8001e40:	200002dc 	.word	0x200002dc
+ 8001e40:	200002e0 	.word	0x200002e0
   ldr r2, =_sidata
  8001e44:	080167a4 	.word	0x080167a4
   ldr r2, =_sbss
- 8001e48:	200002dc 	.word	0x200002dc
+ 8001e48:	200002e0 	.word	0x200002e0
   ldr r4, =_ebss
- 8001e4c:	20001664 	.word	0x20001664
+ 8001e4c:	20001668 	.word	0x20001668
 
 08001e50 <ADC1_COMP_IRQHandler>:
  * @retval : None
@@ -24422,10 +24422,10 @@ int32_t IKS01A3_ENV_SENSOR_Init(uint32_t Instance, uint32_t Functions)
  80089be:	b00a      	add	sp, #40	; 0x28
  80089c0:	bd80      	pop	{r7, pc}
  80089c2:	46c0      	nop			; (mov r8, r8)
- 80089c4:	20000bcc 	.word	0x20000bcc
- 80089c8:	20000b9c 	.word	0x20000b9c
+ 80089c4:	20000bd0 	.word	0x20000bd0
+ 80089c8:	20000ba0 	.word	0x20000ba0
  80089cc:	20000224 	.word	0x20000224
- 80089d0:	20000ba8 	.word	0x20000ba8
+ 80089d0:	20000bac 	.word	0x20000bac
 
 080089d4 <IKS01A3_ENV_SENSOR_Enable>:
   *         - ENV_TEMPERATURE or ENV_HUMIDITY for instance 0
@@ -24519,10 +24519,10 @@ int32_t IKS01A3_ENV_SENSOR_Enable(uint32_t Instance, uint32_t Function)
  8008a42:	b004      	add	sp, #16
  8008a44:	bd80      	pop	{r7, pc}
  8008a46:	46c0      	nop			; (mov r8, r8)
- 8008a48:	20000bd8 	.word	0x20000bd8
+ 8008a48:	20000bdc 	.word	0x20000bdc
  8008a4c:	20000224 	.word	0x20000224
- 8008a50:	20000ba8 	.word	0x20000ba8
- 8008a54:	20000b9c 	.word	0x20000b9c
+ 8008a50:	20000bac 	.word	0x20000bac
+ 8008a54:	20000ba0 	.word	0x20000ba0
 
 08008a58 <IKS01A3_ENV_SENSOR_Disable>:
   *         - ENV_TEMPERATURE or ENV_HUMIDITY for instance 0
@@ -24616,10 +24616,10 @@ int32_t IKS01A3_ENV_SENSOR_Disable(uint32_t Instance, uint32_t Function)
  8008ac6:	b004      	add	sp, #16
  8008ac8:	bd80      	pop	{r7, pc}
  8008aca:	46c0      	nop			; (mov r8, r8)
- 8008acc:	20000bd8 	.word	0x20000bd8
+ 8008acc:	20000bdc 	.word	0x20000bdc
  8008ad0:	20000224 	.word	0x20000224
- 8008ad4:	20000ba8 	.word	0x20000ba8
- 8008ad8:	20000b9c 	.word	0x20000b9c
+ 8008ad4:	20000bac 	.word	0x20000bac
+ 8008ad8:	20000ba0 	.word	0x20000ba0
 
 08008adc <IKS01A3_ENV_SENSOR_GetValue>:
   *         - ENV_TEMPERATURE or ENV_PRESSURE for instance 1
@@ -24715,10 +24715,10 @@ int32_t IKS01A3_ENV_SENSOR_GetValue(uint32_t Instance, uint32_t Function, float 
  8008b4e:	b006      	add	sp, #24
  8008b50:	bd80      	pop	{r7, pc}
  8008b52:	46c0      	nop			; (mov r8, r8)
- 8008b54:	20000bd8 	.word	0x20000bd8
+ 8008b54:	20000bdc 	.word	0x20000bdc
  8008b58:	20000224 	.word	0x20000224
- 8008b5c:	20000ba8 	.word	0x20000ba8
- 8008b60:	20000b9c 	.word	0x20000b9c
+ 8008b5c:	20000bac 	.word	0x20000bac
+ 8008b60:	20000ba0 	.word	0x20000ba0
 
 08008b64 <HTS221_0_Probe>:
   * @param  Functions Environmental sensor functions. Could be :
@@ -24974,13 +24974,13 @@ static int32_t HTS221_0_Probe(uint32_t Functions)
  8008cc0:	08001b85 	.word	0x08001b85
  8008cc4:	08001b0d 	.word	0x08001b0d
  8008cc8:	08001bfd 	.word	0x08001bfd
- 8008ccc:	20000be4 	.word	0x20000be4
- 8008cd0:	20000bd8 	.word	0x20000bd8
- 8008cd4:	20000b9c 	.word	0x20000b9c
- 8008cd8:	20000bcc 	.word	0x20000bcc
+ 8008ccc:	20000be8 	.word	0x20000be8
+ 8008cd0:	20000bdc 	.word	0x20000bdc
+ 8008cd4:	20000ba0 	.word	0x20000ba0
+ 8008cd8:	20000bd0 	.word	0x20000bd0
  8008cdc:	200000d0 	.word	0x200000d0
  8008ce0:	20000224 	.word	0x20000224
- 8008ce4:	20000ba8 	.word	0x20000ba8
+ 8008ce4:	20000bac 	.word	0x20000bac
  8008ce8:	200000f4 	.word	0x200000f4
  8008cec:	200000e0 	.word	0x200000e0
 
@@ -25240,13 +25240,13 @@ static int32_t LPS22HH_0_Probe(uint32_t Functions)
  8008e50:	08001b85 	.word	0x08001b85
  8008e54:	08001b0d 	.word	0x08001b0d
  8008e58:	08001bfd 	.word	0x08001bfd
- 8008e5c:	20000c10 	.word	0x20000c10
- 8008e60:	20000bd8 	.word	0x20000bd8
- 8008e64:	20000b9c 	.word	0x20000b9c
- 8008e68:	20000bcc 	.word	0x20000bcc
+ 8008e5c:	20000c14 	.word	0x20000c14
+ 8008e60:	20000bdc 	.word	0x20000bdc
+ 8008e64:	20000ba0 	.word	0x20000ba0
+ 8008e68:	20000bd0 	.word	0x20000bd0
  8008e6c:	20000170 	.word	0x20000170
  8008e70:	20000224 	.word	0x20000224
- 8008e74:	20000ba8 	.word	0x20000ba8
+ 8008e74:	20000bac 	.word	0x20000bac
  8008e78:	20000194 	.word	0x20000194
  8008e7c:	20000180 	.word	0x20000180
 
@@ -25473,13 +25473,13 @@ static int32_t STTS751_0_Probe(uint32_t Functions)
  8008fb0:	08001b85 	.word	0x08001b85
  8008fb4:	08001b0d 	.word	0x08001b0d
  8008fb8:	08001bfd 	.word	0x08001bfd
- 8008fbc:	20000c3c 	.word	0x20000c3c
- 8008fc0:	20000bd8 	.word	0x20000bd8
- 8008fc4:	20000b9c 	.word	0x20000b9c
- 8008fc8:	20000bcc 	.word	0x20000bcc
+ 8008fbc:	20000c40 	.word	0x20000c40
+ 8008fc0:	20000bdc 	.word	0x20000bdc
+ 8008fc4:	20000ba0 	.word	0x20000ba0
+ 8008fc8:	20000bd0 	.word	0x20000bd0
  8008fcc:	20000200 	.word	0x20000200
  8008fd0:	20000224 	.word	0x20000224
- 8008fd4:	20000ba8 	.word	0x20000ba8
+ 8008fd4:	20000bac 	.word	0x20000bac
  8008fd8:	20000210 	.word	0x20000210
 
 08008fdc <IKS01A3_MOTION_SENSOR_Init>:
@@ -25859,10 +25859,10 @@ int32_t IKS01A3_MOTION_SENSOR_Init(uint32_t Instance, uint32_t Functions)
  80091de:	b00e      	add	sp, #56	; 0x38
  80091e0:	bd80      	pop	{r7, pc}
  80091e2:	46c0      	nop			; (mov r8, r8)
- 80091e4:	20000c9c 	.word	0x20000c9c
- 80091e8:	20000c6c 	.word	0x20000c6c
+ 80091e4:	20000ca0 	.word	0x20000ca0
+ 80091e8:	20000c70 	.word	0x20000c70
  80091ec:	20000238 	.word	0x20000238
- 80091f0:	20000c78 	.word	0x20000c78
+ 80091f0:	20000c7c 	.word	0x20000c7c
 
 080091f4 <IKS01A3_MOTION_SENSOR_Enable>:
   *         - MOTION_ACCELERO for instance 1
@@ -25956,10 +25956,10 @@ int32_t IKS01A3_MOTION_SENSOR_Enable(uint32_t Instance, uint32_t Function)
  8009262:	b004      	add	sp, #16
  8009264:	bd80      	pop	{r7, pc}
  8009266:	46c0      	nop			; (mov r8, r8)
- 8009268:	20000ca8 	.word	0x20000ca8
+ 8009268:	20000cac 	.word	0x20000cac
  800926c:	20000238 	.word	0x20000238
- 8009270:	20000c78 	.word	0x20000c78
- 8009274:	20000c6c 	.word	0x20000c6c
+ 8009270:	20000c7c 	.word	0x20000c7c
+ 8009274:	20000c70 	.word	0x20000c70
 
 08009278 <IKS01A3_MOTION_SENSOR_Disable>:
   *         - MOTION_ACCELERO for instance 1
@@ -26053,10 +26053,10 @@ int32_t IKS01A3_MOTION_SENSOR_Disable(uint32_t Instance, uint32_t Function)
  80092e6:	b004      	add	sp, #16
  80092e8:	bd80      	pop	{r7, pc}
  80092ea:	46c0      	nop			; (mov r8, r8)
- 80092ec:	20000ca8 	.word	0x20000ca8
+ 80092ec:	20000cac 	.word	0x20000cac
  80092f0:	20000238 	.word	0x20000238
- 80092f4:	20000c78 	.word	0x20000c78
- 80092f8:	20000c6c 	.word	0x20000c6c
+ 80092f4:	20000c7c 	.word	0x20000c7c
+ 80092f8:	20000c70 	.word	0x20000c70
 
 080092fc <IKS01A3_MOTION_SENSOR_GetAxes>:
   *         - MOTION_MAGNETO for instance 2
@@ -26152,10 +26152,10 @@ int32_t IKS01A3_MOTION_SENSOR_GetAxes(uint32_t Instance, uint32_t Function, IKS0
  800936e:	b006      	add	sp, #24
  8009370:	bd80      	pop	{r7, pc}
  8009372:	46c0      	nop			; (mov r8, r8)
- 8009374:	20000ca8 	.word	0x20000ca8
+ 8009374:	20000cac 	.word	0x20000cac
  8009378:	20000238 	.word	0x20000238
- 800937c:	20000c78 	.word	0x20000c78
- 8009380:	20000c6c 	.word	0x20000c6c
+ 800937c:	20000c7c 	.word	0x20000c7c
+ 8009380:	20000c70 	.word	0x20000c70
 
 08009384 <IKS01A3_MOTION_SENSOR_SetOutputDataRate>:
   *         - MOTION_MAGNETO for instance 2
@@ -26251,10 +26251,10 @@ int32_t IKS01A3_MOTION_SENSOR_SetOutputDataRate(uint32_t Instance, uint32_t Func
  80093f6:	b006      	add	sp, #24
  80093f8:	bd80      	pop	{r7, pc}
  80093fa:	46c0      	nop			; (mov r8, r8)
- 80093fc:	20000ca8 	.word	0x20000ca8
+ 80093fc:	20000cac 	.word	0x20000cac
  8009400:	20000238 	.word	0x20000238
- 8009404:	20000c78 	.word	0x20000c78
- 8009408:	20000c6c 	.word	0x20000c6c
+ 8009404:	20000c7c 	.word	0x20000c7c
+ 8009408:	20000c70 	.word	0x20000c70
 
 0800940c <IKS01A3_MOTION_SENSOR_SetFullScale>:
   *         - MOTION_MAGNETO for instance 2
@@ -26351,10 +26351,10 @@ int32_t IKS01A3_MOTION_SENSOR_SetFullScale(uint32_t Instance, uint32_t Function,
  800947e:	b006      	add	sp, #24
  8009480:	bd80      	pop	{r7, pc}
  8009482:	46c0      	nop			; (mov r8, r8)
- 8009484:	20000ca8 	.word	0x20000ca8
+ 8009484:	20000cac 	.word	0x20000cac
  8009488:	20000238 	.word	0x20000238
- 800948c:	20000c78 	.word	0x20000c78
- 8009490:	20000c6c 	.word	0x20000c6c
+ 800948c:	20000c7c 	.word	0x20000c7c
+ 8009490:	20000c70 	.word	0x20000c70
 
 08009494 <LSM6DSO_0_Probe>:
 /**
@@ -26608,13 +26608,13 @@ static int32_t LSM6DSO_0_Probe(uint32_t Functions)
  80095f0:	08001b85 	.word	0x08001b85
  80095f4:	08001b0d 	.word	0x08001b0d
  80095f8:	08001bfd 	.word	0x08001bfd
- 80095fc:	20000cb4 	.word	0x20000cb4
- 8009600:	20000ca8 	.word	0x20000ca8
- 8009604:	20000c6c 	.word	0x20000c6c
- 8009608:	20000c9c 	.word	0x20000c9c
+ 80095fc:	20000cb8 	.word	0x20000cb8
+ 8009600:	20000cac 	.word	0x20000cac
+ 8009604:	20000c70 	.word	0x20000c70
+ 8009608:	20000ca0 	.word	0x20000ca0
  800960c:	200001a8 	.word	0x200001a8
  8009610:	20000238 	.word	0x20000238
- 8009614:	20000c78 	.word	0x20000c78
+ 8009614:	20000c7c 	.word	0x20000c7c
  8009618:	200001dc 	.word	0x200001dc
  800961c:	200001b8 	.word	0x200001b8
 
@@ -26839,13 +26839,13 @@ static int32_t LIS2DW12_0_Probe(uint32_t Functions)
  8009750:	08001b85 	.word	0x08001b85
  8009754:	08001b0d 	.word	0x08001b0d
  8009758:	08001bfd 	.word	0x08001bfd
- 800975c:	20000ce4 	.word	0x20000ce4
- 8009760:	20000ca8 	.word	0x20000ca8
- 8009764:	20000c6c 	.word	0x20000c6c
- 8009768:	20000c9c 	.word	0x20000c9c
+ 800975c:	20000ce8 	.word	0x20000ce8
+ 8009760:	20000cac 	.word	0x20000cac
+ 8009764:	20000c70 	.word	0x20000c70
+ 8009768:	20000ca0 	.word	0x20000ca0
  800976c:	20000108 	.word	0x20000108
  8009770:	20000238 	.word	0x20000238
- 8009774:	20000c78 	.word	0x20000c78
+ 8009774:	20000c7c 	.word	0x20000c7c
  8009778:	20000118 	.word	0x20000118
 
 0800977c <LIS2MDL_0_Probe>:
@@ -27069,13 +27069,13 @@ static int32_t LIS2MDL_0_Probe(uint32_t Functions)
  80098ac:	08001b85 	.word	0x08001b85
  80098b0:	08001b0d 	.word	0x08001b0d
  80098b4:	08001bfd 	.word	0x08001bfd
- 80098b8:	20000d18 	.word	0x20000d18
- 80098bc:	20000ca8 	.word	0x20000ca8
- 80098c0:	20000c6c 	.word	0x20000c6c
- 80098c4:	20000c9c 	.word	0x20000c9c
+ 80098b8:	20000d1c 	.word	0x20000d1c
+ 80098bc:	20000cac 	.word	0x20000cac
+ 80098c0:	20000c70 	.word	0x20000c70
+ 80098c4:	20000ca0 	.word	0x20000ca0
  80098c8:	2000013c 	.word	0x2000013c
  80098cc:	20000238 	.word	0x20000238
- 80098d0:	20000c78 	.word	0x20000c78
+ 80098d0:	20000c7c 	.word	0x20000c7c
  80098d4:	2000014c 	.word	0x2000014c
 
 080098d8 <BSP_LED_Init>:
@@ -27612,7 +27612,7 @@ int32_t BSP_COM_Init(COM_TypeDef COM)
  8009bd4:	bd80      	pop	{r7, pc}
  8009bd6:	46c0      	nop			; (mov r8, r8)
  8009bd8:	2000025c 	.word	0x2000025c
- 8009bdc:	20000d44 	.word	0x20000d44
+ 8009bdc:	20000d48 	.word	0x20000d48
 
 08009be0 <MX_USART2_UART_Init>:
  */
@@ -27857,7 +27857,7 @@ static void USART2_MspInit(UART_HandleTypeDef* uartHandle)
  8009d2c:	b009      	add	sp, #36	; 0x24
  8009d2e:	bd90      	pop	{r4, r7, pc}
  8009d30:	40021000 	.word	0x40021000
- 8009d34:	20000dc8 	.word	0x20000dc8
+ 8009d34:	20000dcc 	.word	0x20000dcc
  8009d38:	40020058 	.word	0x40020058
 
 08009d3c <HAL_Init>:
@@ -28018,7 +28018,7 @@ __weak void HAL_IncTick(void)
  8009dfc:	bd80      	pop	{r7, pc}
  8009dfe:	46c0      	nop			; (mov r8, r8)
  8009e00:	20000264 	.word	0x20000264
- 8009e04:	20000e10 	.word	0x20000e10
+ 8009e04:	20000e14 	.word	0x20000e14
 
 08009e08 <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other
@@ -28037,7 +28037,7 @@ __weak uint32_t HAL_GetTick(void)
  8009e12:	46bd      	mov	sp, r7
  8009e14:	bd80      	pop	{r7, pc}
  8009e16:	46c0      	nop			; (mov r8, r8)
- 8009e18:	20000e10 	.word	0x20000e10
+ 8009e18:	20000e14 	.word	0x20000e14
 
 08009e1c <HAL_Delay>:
   *       implementations in user file.
@@ -41419,8 +41419,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  800e536:	b002      	add	sp, #8
  800e538:	bd80      	pop	{r7, pc}
  800e53a:	46c0      	nop			; (mov r8, r8)
- 800e53c:	20000b00 	.word	0x20000b00
- 800e540:	20000e40 	.word	0x20000e40
+ 800e53c:	20000b04 	.word	0x20000b04
+ 800e540:	2000026c 	.word	0x2000026c
 
 0800e544 <MX_DataLogFusion_Init>:
 /**
@@ -41577,12 +41577,12 @@ static void MX_DataLogFusion_Init(void)
  800e61e:	b006      	add	sp, #24
  800e620:	bd80      	pop	{r7, pc}
  800e622:	46c0      	nop			; (mov r8, r8)
- 800e624:	20000ff4 	.word	0x20000ff4
- 800e628:	20000e3c 	.word	0x20000e3c
- 800e62c:	20000e18 	.word	0x20000e18
+ 800e624:	20000ff8 	.word	0x20000ff8
+ 800e628:	20000e40 	.word	0x20000e40
+ 800e62c:	20000e1c 	.word	0x20000e1c
  800e630:	43fa0000 	.word	0x43fa0000
- 800e634:	2000102c 	.word	0x2000102c
- 800e638:	20001038 	.word	0x20001038
+ 800e634:	20001030 	.word	0x20001030
+ 800e638:	2000103c 	.word	0x2000103c
 
 0800e63c <MX_DataLogFusion_Process>:
 /**
@@ -41816,16 +41816,16 @@ static SensorData MX_DataLogFusion_Process(void)
  800e778:	bd90      	pop	{r4, r7, pc}
  800e77a:	46c0      	nop			; (mov r8, r8)
  800e77c:	08015a0c 	.word	0x08015a0c
- 800e780:	2000103c 	.word	0x2000103c
- 800e784:	20001028 	.word	0x20001028
- 800e788:	20000ff4 	.word	0x20000ff4
- 800e78c:	20001038 	.word	0x20001038
- 800e790:	2000102c 	.word	0x2000102c
- 800e794:	20000e40 	.word	0x20000e40
- 800e798:	20001140 	.word	0x20001140
- 800e79c:	20000e41 	.word	0x20000e41
- 800e7a0:	20000fec 	.word	0x20000fec
- 800e7a4:	20000fe4 	.word	0x20000fe4
+ 800e780:	20001040 	.word	0x20001040
+ 800e784:	2000102c 	.word	0x2000102c
+ 800e788:	20000ff8 	.word	0x20000ff8
+ 800e78c:	2000103c 	.word	0x2000103c
+ 800e790:	20001030 	.word	0x20001030
+ 800e794:	2000026c 	.word	0x2000026c
+ 800e798:	20001144 	.word	0x20001144
+ 800e79c:	20000e44 	.word	0x20000e44
+ 800e7a0:	20000ff0 	.word	0x20000ff0
+ 800e7a4:	20000fe8 	.word	0x20000fe8
 
 0800e7a8 <Init_Sensors>:
  * @brief  Initialize all sensors
@@ -42008,10 +42008,10 @@ static void RTC_Handler(TMsg *Msg)
  800e8b6:	46bd      	mov	sp, r7
  800e8b8:	b00d      	add	sp, #52	; 0x34
  800e8ba:	bd90      	pop	{r4, r7, pc}
- 800e8bc:	20000adc 	.word	0x20000adc
- 800e8c0:	20000e41 	.word	0x20000e41
- 800e8c4:	20000fe4 	.word	0x20000fe4
- 800e8c8:	20000e44 	.word	0x20000e44
+ 800e8bc:	20000ae0 	.word	0x20000ae0
+ 800e8c0:	20000e44 	.word	0x20000e44
+ 800e8c4:	20000fe8 	.word	0x20000fe8
+ 800e8c8:	20000e48 	.word	0x20000e48
 
 0800e8cc <FX_Data_Handler>:
  * @brief  Sensor Fusion data handler
@@ -42376,13 +42376,13 @@ static void FX_Data_Handler(TMsg *Msg)
  800eb5c:	bdf0      	pop	{r4, r5, r6, r7, pc}
  800eb5e:	46c0      	nop			; (mov r8, r8)
  800eb60:	20000268 	.word	0x20000268
- 800eb64:	20001004 	.word	0x20001004
+ 800eb64:	20001008 	.word	0x20001008
  800eb68:	3a83126f 	.word	0x3a83126f
- 800eb6c:	20000ff8 	.word	0x20000ff8
- 800eb70:	20001010 	.word	0x20001010
+ 800eb6c:	20000ffc 	.word	0x20000ffc
+ 800eb70:	20001014 	.word	0x20001014
  800eb74:	3b03126f 	.word	0x3b03126f
  800eb78:	3c23d70a 	.word	0x3c23d70a
- 800eb7c:	20000ff0 	.word	0x20000ff0
+ 800eb7c:	20000ff4 	.word	0x20000ff4
 
 0800eb80 <BSP_PB_Callback>:
   * @brief  BSP Push Button callback
@@ -42407,7 +42407,7 @@ void BSP_PB_Callback(Button_TypeDef Button)
  800eb96:	b002      	add	sp, #8
  800eb98:	bd80      	pop	{r7, pc}
  800eb9a:	46c0      	nop			; (mov r8, r8)
- 800eb9c:	20001028 	.word	0x20001028
+ 800eb9c:	2000102c 	.word	0x2000102c
 
 0800eba0 <Accelero_Sensor_Handler>:
  * @brief  Handles the ACC axes data getting/sending
@@ -42511,10 +42511,10 @@ static void Accelero_Sensor_Handler(TMsg *Msg)
  800ec3c:	b002      	add	sp, #8
  800ec3e:	bd80      	pop	{r7, pc}
  800ec40:	20000268 	.word	0x20000268
- 800ec44:	20000e41 	.word	0x20000e41
- 800ec48:	20000fe4 	.word	0x20000fe4
- 800ec4c:	20000e44 	.word	0x20000e44
- 800ec50:	20000ff8 	.word	0x20000ff8
+ 800ec44:	20000e44 	.word	0x20000e44
+ 800ec48:	20000fe8 	.word	0x20000fe8
+ 800ec4c:	20000e48 	.word	0x20000e48
+ 800ec50:	20000ffc 	.word	0x20000ffc
 
 0800ec54 <Gyro_Sensor_Handler>:
  * @brief  Handles the GYR axes data getting/sending
@@ -42618,10 +42618,10 @@ static void Gyro_Sensor_Handler(TMsg *Msg)
  800ecf0:	b002      	add	sp, #8
  800ecf2:	bd80      	pop	{r7, pc}
  800ecf4:	20000268 	.word	0x20000268
- 800ecf8:	20000e41 	.word	0x20000e41
- 800ecfc:	20000fe4 	.word	0x20000fe4
- 800ed00:	20000e44 	.word	0x20000e44
- 800ed04:	20001004 	.word	0x20001004
+ 800ecf8:	20000e44 	.word	0x20000e44
+ 800ecfc:	20000fe8 	.word	0x20000fe8
+ 800ed00:	20000e48 	.word	0x20000e48
+ 800ed04:	20001008 	.word	0x20001008
 
 0800ed08 <Magneto_Sensor_Handler>:
  * @brief  Handles the MAG axes data getting/sending
@@ -42873,14 +42873,14 @@ static void Magneto_Sensor_Handler(TMsg *Msg)
  800eea8:	bd90      	pop	{r4, r7, pc}
  800eeaa:	46c0      	nop			; (mov r8, r8)
  800eeac:	20000268 	.word	0x20000268
- 800eeb0:	20000e41 	.word	0x20000e41
- 800eeb4:	20000fe4 	.word	0x20000fe4
- 800eeb8:	20000e44 	.word	0x20000e44
- 800eebc:	20001010 	.word	0x20001010
- 800eec0:	20001038 	.word	0x20001038
+ 800eeb0:	20000e44 	.word	0x20000e44
+ 800eeb4:	20000fe8 	.word	0x20000fe8
+ 800eeb8:	20000e48 	.word	0x20000e48
+ 800eebc:	20001014 	.word	0x20001014
+ 800eec0:	2000103c 	.word	0x2000103c
  800eec4:	3b03126f 	.word	0x3b03126f
  800eec8:	43fa0000 	.word	0x43fa0000
- 800eecc:	2000102c 	.word	0x2000102c
+ 800eecc:	20001030 	.word	0x20001030
 
 0800eed0 <Pressure_Sensor_Handler>:
  * @brief  Handles the PRESS sensor data getting/sending.
@@ -42942,10 +42942,10 @@ static void Pressure_Sensor_Handler(TMsg *Msg)
  800ef1c:	b002      	add	sp, #8
  800ef1e:	bd80      	pop	{r7, pc}
  800ef20:	20000268 	.word	0x20000268
- 800ef24:	20000e41 	.word	0x20000e41
- 800ef28:	20000fe4 	.word	0x20000fe4
- 800ef2c:	20000e44 	.word	0x20000e44
- 800ef30:	2000101c 	.word	0x2000101c
+ 800ef24:	20000e44 	.word	0x20000e44
+ 800ef28:	20000fe8 	.word	0x20000fe8
+ 800ef2c:	20000e48 	.word	0x20000e48
+ 800ef30:	20001020 	.word	0x20001020
 
 0800ef34 <Temperature_Sensor_Handler>:
  * @brief  Handles the TEMP axes data getting/sending
@@ -43014,10 +43014,10 @@ static void Temperature_Sensor_Handler(TMsg *Msg, SensorData *SD)
  800ef8c:	bd80      	pop	{r7, pc}
  800ef8e:	46c0      	nop			; (mov r8, r8)
  800ef90:	20000268 	.word	0x20000268
- 800ef94:	20000e41 	.word	0x20000e41
- 800ef98:	20000fe4 	.word	0x20000fe4
- 800ef9c:	20000e44 	.word	0x20000e44
- 800efa0:	20001020 	.word	0x20001020
+ 800ef94:	20000e44 	.word	0x20000e44
+ 800ef98:	20000fe8 	.word	0x20000fe8
+ 800ef9c:	20000e48 	.word	0x20000e48
+ 800efa0:	20001024 	.word	0x20001024
 
 0800efa4 <Humidity_Sensor_Handler>:
  * @brief  Handles the HUM axes data getting/sending
@@ -43086,10 +43086,10 @@ static void Humidity_Sensor_Handler(TMsg *Msg, SensorData *SD)
  800effc:	bd80      	pop	{r7, pc}
  800effe:	46c0      	nop			; (mov r8, r8)
  800f000:	20000268 	.word	0x20000268
- 800f004:	20000e41 	.word	0x20000e41
- 800f008:	20000fe4 	.word	0x20000fe4
- 800f00c:	20000e44 	.word	0x20000e44
- 800f010:	20001024 	.word	0x20001024
+ 800f004:	20000e44 	.word	0x20000e44
+ 800f008:	20000fe8 	.word	0x20000fe8
+ 800f00c:	20000e48 	.word	0x20000e48
+ 800f010:	20001028 	.word	0x20001028
 
 0800f014 <TIM_Config>:
  * @brief  Timer configuration
@@ -43159,7 +43159,7 @@ static void TIM_Config(uint32_t Freq)
  800f074:	b006      	add	sp, #24
  800f076:	bd80      	pop	{r7, pc}
  800f078:	200000cc 	.word	0x200000cc
- 800f07c:	20000b00 	.word	0x20000b00
+ 800f07c:	20000b04 	.word	0x20000b04
 
 0800f080 <UART_ReceivedMSG>:
  * @brief  Check if a message is received via UART
@@ -43514,9 +43514,9 @@ int UART_ReceivedMSG(TMsg *Msg)
  800f28e:	46bd      	mov	sp, r7
  800f290:	b00a      	add	sp, #40	; 0x28
  800f292:	bdb0      	pop	{r4, r5, r7, pc}
- 800f294:	20000d44 	.word	0x20000d44
- 800f298:	20001444 	.word	0x20001444
- 800f29c:	20001244 	.word	0x20001244
+ 800f294:	20000d48 	.word	0x20000d48
+ 800f298:	20001448 	.word	0x20001448
+ 800f29c:	20001248 	.word	0x20001248
 
 0800f2a0 <UART_SendMsg>:
  * @brief  Send a message via UART
@@ -43562,9 +43562,9 @@ void UART_SendMsg(TMsg *Msg)
  800f2d6:	46bd      	mov	sp, r7
  800f2d8:	b005      	add	sp, #20
  800f2da:	bd90      	pop	{r4, r7, pc}
- 800f2dc:	2000144c 	.word	0x2000144c
+ 800f2dc:	20001450 	.word	0x20001450
  800f2e0:	00001388 	.word	0x00001388
- 800f2e4:	20000d44 	.word	0x20000d44
+ 800f2e4:	20000d48 	.word	0x20000d48
 
 0800f2e8 <UART_StartReceiveMsg>:
  * @brief  Start receiving messages via DMA
@@ -43605,8 +43605,8 @@ void UART_StartReceiveMsg(void)
  800f312:	46c0      	nop			; (mov r8, r8)
  800f314:	46bd      	mov	sp, r7
  800f316:	bd80      	pop	{r7, pc}
- 800f318:	20000d44 	.word	0x20000d44
- 800f31c:	20001244 	.word	0x20001244
+ 800f318:	20000d48 	.word	0x20000d48
+ 800f31c:	20001248 	.word	0x20001248
 
 0800f320 <Get_DMA_Flag_Status>:
  * @brief  Get the DMA Stream pending flags
@@ -43773,7 +43773,7 @@ void INIT_STREAMING_HEADER(TMsg *Msg)
  800f41a:	46bd      	mov	sp, r7
  800f41c:	b002      	add	sp, #8
  800f41e:	bd80      	pop	{r7, pc}
- 800f420:	20000270 	.word	0x20000270
+ 800f420:	20000274 	.word	0x20000274
 
 0800f424 <HandleMSG>:
  */
@@ -44359,10 +44359,10 @@ int HandleMSG(TMsg *Msg)
  800f756:	e12f      	b.n	800f9b8 <HandleMSG+0x594>
  800f758:	08016308 	.word	0x08016308
  800f75c:	20000268 	.word	0x20000268
- 800f760:	20000b00 	.word	0x20000b00
- 800f764:	20000e14 	.word	0x20000e14
- 800f768:	20000270 	.word	0x20000270
- 800f76c:	20000e41 	.word	0x20000e41
+ 800f760:	20000b04 	.word	0x20000b04
+ 800f764:	20000e18 	.word	0x20000e18
+ 800f768:	20000274 	.word	0x20000274
+ 800f76c:	20000e44 	.word	0x20000e44
       {
         memcpy(&OfflineData[OfflineDataWriteIndex].hours, &Msg->Data[msg_offset], 1);
  800f770:	4bd3      	ldr	r3, [pc, #844]	; (800fac0 <HandleMSG+0x69c>)
@@ -44873,16 +44873,16 @@ int HandleMSG(TMsg *Msg)
  800faba:	b018      	add	sp, #96	; 0x60
  800fabc:	bd80      	pop	{r7, pc}
  800fabe:	46c0      	nop			; (mov r8, r8)
- 800fac0:	20000fe8 	.word	0x20000fe8
- 800fac4:	20000e44 	.word	0x20000e44
- 800fac8:	20000fec 	.word	0x20000fec
- 800facc:	20000e40 	.word	0x20000e40
- 800fad0:	20000e41 	.word	0x20000e41
+ 800fac0:	20000fec 	.word	0x20000fec
+ 800fac4:	20000e48 	.word	0x20000e48
+ 800fac8:	20000ff0 	.word	0x20000ff0
+ 800facc:	2000026c 	.word	0x2000026c
+ 800fad0:	20000e44 	.word	0x20000e44
  800fad4:	20000268 	.word	0x20000268
- 800fad8:	2000164c 	.word	0x2000164c
- 800fadc:	20000b00 	.word	0x20000b00
- 800fae0:	2000026c 	.word	0x2000026c
- 800fae4:	20000ff0 	.word	0x20000ff0
+ 800fad8:	20001650 	.word	0x20001650
+ 800fadc:	20000b04 	.word	0x20000b04
+ 800fae0:	20000270 	.word	0x20000270
+ 800fae4:	20000ff4 	.word	0x20000ff4
 
 0800fae8 <RTC_DateRegulate>:
  * @param  d the day value to be set
@@ -44952,7 +44952,7 @@ void RTC_DateRegulate(uint8_t y, uint8_t m, uint8_t d, uint8_t dw)
  800fb46:	46bd      	mov	sp, r7
  800fb48:	b004      	add	sp, #16
  800fb4a:	bdb0      	pop	{r4, r5, r7, pc}
- 800fb4c:	20000adc 	.word	0x20000adc
+ 800fb4c:	20000ae0 	.word	0x20000ae0
 
 0800fb50 <RTC_TimeRegulate>:
  * @param  mm the minute value to be set
@@ -45029,7 +45029,7 @@ void RTC_TimeRegulate(uint8_t hh, uint8_t mm, uint8_t ss)
  800fbb6:	46bd      	mov	sp, r7
  800fbb8:	b009      	add	sp, #36	; 0x24
  800fbba:	bd90      	pop	{r4, r7, pc}
- 800fbbc:	20000adc 	.word	0x20000adc
+ 800fbbc:	20000ae0 	.word	0x20000ae0
 
 0800fbc0 <Get_PresentationString>:
  * @param  PresentationString the Presentation string
@@ -45821,8 +45821,8 @@ void MotionFX_manager_run(MFX_CM0P_input_t *data_in, MFX_CM0P_output_t *data_out
  800ff56:	46bd      	mov	sp, r7
  800ff58:	b004      	add	sp, #16
  800ff5a:	bd80      	pop	{r7, pc}
- 800ff5c:	20001650 	.word	0x20001650
- 800ff60:	20000274 	.word	0x20000274
+ 800ff5c:	20001654 	.word	0x20001654
+ 800ff60:	20000278 	.word	0x20000278
 
 0800ff64 <MotionFX_manager_start_6X>:
  * @brief  Start 6 axes MotionFX engine
@@ -47450,7 +47450,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8010b6a:	6020      	str	r0, [r4, #0]
  8010b6c:	e006      	b.n	8010b7c <calibrate+0x27c>
  8010b6e:	46c0      	nop			; (mov r8, r8)
- 8010b70:	200002f8 	.word	0x200002f8
+ 8010b70:	200002fc 	.word	0x200002fc
  8010b74:	fffffc24 	.word	0xfffffc24
  8010b78:	0000065c 	.word	0x0000065c
  8010b7c:	9b05      	ldr	r3, [sp, #20]
@@ -50649,10 +50649,10 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  80128d4:	02028041 	.word	0x02028041
  80128d8:	100007f8 	.word	0x100007f8
  80128dc:	aa550000 	.word	0xaa550000
- 80128e0:	20000a28 	.word	0x20000a28
+ 80128e0:	20000a2c 	.word	0x20000a2c
  80128e4:	3f34fdf4 	.word	0x3f34fdf4
  80128e8:	bf34fdf4 	.word	0xbf34fdf4
- 80128ec:	200002f8 	.word	0x200002f8
+ 80128ec:	200002fc 	.word	0x200002fc
  80128f0:	2000003c 	.word	0x2000003c
  80128f4:	08016354 	.word	0x08016354
  80128f8:	e0042000 	.word	0xe0042000
@@ -50683,7 +50683,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8012934:	3020      	adds	r0, #32
  8012936:	f7fd fcff 	bl	8010338 <inemo_set_orientation>
  801293a:	bd70      	pop	{r4, r5, r6, pc}
- 801293c:	200002f8 	.word	0x200002f8
+ 801293c:	200002fc 	.word	0x200002fc
 
 08012940 <MotionFX_CM0P_enable_6X>:
  8012940:	4b03      	ldr	r3, [pc, #12]	; (8012950 <MotionFX_CM0P_enable_6X+0x10>)
@@ -50694,7 +50694,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  801294a:	7058      	strb	r0, [r3, #1]
  801294c:	4770      	bx	lr
  801294e:	46c0      	nop			; (mov r8, r8)
- 8012950:	200002f8 	.word	0x200002f8
+ 8012950:	200002fc 	.word	0x200002fc
  8012954:	20000000 	.word	0x20000000
 
 08012958 <MotionFX_CM0P_enable_9X>:
@@ -50706,7 +50706,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8012962:	7018      	strb	r0, [r3, #0]
  8012964:	4770      	bx	lr
  8012966:	46c0      	nop			; (mov r8, r8)
- 8012968:	200002f8 	.word	0x200002f8
+ 8012968:	200002fc 	.word	0x200002fc
  801296c:	20000000 	.word	0x20000000
 
 08012970 <MotionFX_CM0P_enable_euler>:
@@ -50718,7 +50718,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  801297a:	7098      	strb	r0, [r3, #2]
  801297c:	4770      	bx	lr
  801297e:	46c0      	nop			; (mov r8, r8)
- 8012980:	200002f8 	.word	0x200002f8
+ 8012980:	200002fc 	.word	0x200002fc
  8012984:	20000000 	.word	0x20000000
 
 08012988 <MotionFX_CM0P_enable_gbias>:
@@ -50730,7 +50730,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8012992:	4a02      	ldr	r2, [pc, #8]	; (801299c <MotionFX_CM0P_enable_gbias+0x14>)
  8012994:	54d0      	strb	r0, [r2, r3]
  8012996:	4770      	bx	lr
- 8012998:	200002f8 	.word	0x200002f8
+ 8012998:	200002fc 	.word	0x200002fc
  801299c:	20000000 	.word	0x20000000
 
 080129a0 <MotionFX_CM0P_update>:
@@ -51035,10 +51035,10 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8012c46:	4183      	sbcs	r3, r0
  8012c48:	469b      	mov	fp, r3
  8012c4a:	e79e      	b.n	8012b8a <MotionFX_CM0P_update+0x1ea>
- 8012c4c:	200002f8 	.word	0x200002f8
+ 8012c4c:	200002fc 	.word	0x200002fc
  8012c50:	20000000 	.word	0x20000000
  8012c54:	2000003c 	.word	0x2000003c
- 8012c58:	20000a28 	.word	0x20000a28
+ 8012c58:	20000a2c 	.word	0x20000a2c
  8012c5c:	3c23d70a 	.word	0x3c23d70a
  8012c60:	42c80000 	.word	0x42c80000
  8012c64:	3eb851ec 	.word	0x3eb851ec
@@ -51168,9 +51168,9 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8012d7c:	f7ee f816 	bl	8000dac <__aeabi_fmul>
  8012d80:	63a0      	str	r0, [r4, #56]	; 0x38
  8012d82:	e79d      	b.n	8012cc0 <MotionFX_CM0P_MagCal_init+0x48>
- 8012d84:	200002f8 	.word	0x200002f8
+ 8012d84:	200002fc 	.word	0x200002fc
  8012d88:	447a0000 	.word	0x447a0000
- 8012d8c:	20000398 	.word	0x20000398
+ 8012d8c:	2000039c 	.word	0x2000039c
  8012d90:	43f9ffff 	.word	0x43f9ffff
  8012d94:	3c23d70a 	.word	0x3c23d70a
  8012d98:	38d1b717 	.word	0x38d1b717
@@ -51405,11 +51405,11 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8012fca:	5263      	strh	r3, [r4, r1]
  8012fcc:	e7ce      	b.n	8012f6c <MotionFX_CM0P_MagCal_run+0x188>
  8012fce:	46c0      	nop			; (mov r8, r8)
- 8012fd0:	200002f8 	.word	0x200002f8
+ 8012fd0:	200002fc 	.word	0x200002fc
  8012fd4:	000004d4 	.word	0x000004d4
  8012fd8:	000004e2 	.word	0x000004e2
  8012fdc:	0000065c 	.word	0x0000065c
- 8012fe0:	20000378 	.word	0x20000378
+ 8012fe0:	2000037c 	.word	0x2000037c
  8012fe4:	23cb      	movs	r3, #203	; 0xcb
  8012fe6:	00db      	lsls	r3, r3, #3
  8012fe8:	5ce3      	ldrb	r3, [r4, r3]
@@ -52463,8 +52463,8 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  80139aa:	7303      	strb	r3, [r0, #12]
  80139ac:	e7fc      	b.n	80139a8 <MotionFX_CM0P_MagCal_getParams+0x2c>
  80139ae:	46c0      	nop			; (mov r8, r8)
- 80139b0:	200002f8 	.word	0x200002f8
- 80139b4:	20000378 	.word	0x20000378
+ 80139b0:	200002fc 	.word	0x200002fc
+ 80139b4:	2000037c 	.word	0x2000037c
 
 080139b8 <MotionFX_CM0P_GetLibVersion>:
  80139b8:	b570      	push	{r4, r5, r6, lr}
@@ -52497,7 +52497,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  80139f2:	2012      	movs	r0, #18
  80139f4:	b00a      	add	sp, #40	; 0x28
  80139f6:	bd70      	pop	{r4, r5, r6, pc}
- 80139f8:	200002f8 	.word	0x200002f8
+ 80139f8:	200002fc 	.word	0x200002fc
  80139fc:	08015b28 	.word	0x08015b28
 
 08013a00 <__errno>:
@@ -52505,7 +52505,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8013a02:	6818      	ldr	r0, [r3, #0]
  8013a04:	4770      	bx	lr
  8013a06:	46c0      	nop			; (mov r8, r8)
- 8013a08:	20000278 	.word	0x20000278
+ 8013a08:	2000027c 	.word	0x2000027c
 
 08013a0c <__libc_init_array>:
  8013a0c:	b570      	push	{r4, r5, r6, lr}
@@ -52612,7 +52612,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8013ad6:	9a02      	ldr	r2, [sp, #8]
  8013ad8:	7013      	strb	r3, [r2, #0]
  8013ada:	e7d9      	b.n	8013a90 <sniprintf+0x18>
- 8013adc:	20000278 	.word	0x20000278
+ 8013adc:	2000027c 	.word	0x2000027c
 
 08013ae0 <__ssputs_r>:
  8013ae0:	b5f0      	push	{r4, r5, r6, r7, lr}
@@ -53434,7 +53434,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  801416e:	6054      	str	r4, [r2, #4]
  8014170:	e7ca      	b.n	8014108 <_free_r+0x24>
  8014172:	46c0      	nop			; (mov r8, r8)
- 8014174:	20001654 	.word	0x20001654
+ 8014174:	20001658 	.word	0x20001658
 
 08014178 <sbrk_aligned>:
  8014178:	b570      	push	{r4, r5, r6, lr}
@@ -53466,7 +53466,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  80141b2:	0028      	movs	r0, r5
  80141b4:	bd70      	pop	{r4, r5, r6, pc}
  80141b6:	46c0      	nop			; (mov r8, r8)
- 80141b8:	20001658 	.word	0x20001658
+ 80141b8:	2000165c 	.word	0x2000165c
 
 080141bc <_malloc_r>:
  80141bc:	b5f7      	push	{r0, r1, r2, r4, r5, r6, r7, lr}
@@ -53579,7 +53579,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  801429c:	f000 f84e 	bl	801433c <__malloc_unlock>
  80142a0:	e7cd      	b.n	801423e <_malloc_r+0x82>
  80142a2:	46c0      	nop			; (mov r8, r8)
- 80142a4:	20001654 	.word	0x20001654
+ 80142a4:	20001658 	.word	0x20001658
 
 080142a8 <_realloc_r>:
  80142a8:	b5f7      	push	{r0, r1, r2, r4, r5, r6, r7, lr}
@@ -53641,7 +53641,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8014322:	6023      	str	r3, [r4, #0]
  8014324:	bd70      	pop	{r4, r5, r6, pc}
  8014326:	46c0      	nop			; (mov r8, r8)
- 8014328:	2000165c 	.word	0x2000165c
+ 8014328:	20001660 	.word	0x20001660
 
 0801432c <__malloc_lock>:
  801432c:	b510      	push	{r4, lr}
@@ -53649,7 +53649,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8014330:	f000 f814 	bl	801435c <__retarget_lock_acquire_recursive>
  8014334:	bd10      	pop	{r4, pc}
  8014336:	46c0      	nop			; (mov r8, r8)
- 8014338:	20001660 	.word	0x20001660
+ 8014338:	20001664 	.word	0x20001664
 
 0801433c <__malloc_unlock>:
  801433c:	b510      	push	{r4, lr}
@@ -53657,7 +53657,7 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
  8014340:	f000 f80d 	bl	801435e <__retarget_lock_release_recursive>
  8014344:	bd10      	pop	{r4, pc}
  8014346:	46c0      	nop			; (mov r8, r8)
- 8014348:	20001660 	.word	0x20001660
+ 8014348:	20001664 	.word	0x20001664
 
 0801434c <_malloc_usable_size_r>:
  801434c:	1f0b      	subs	r3, r1, #4
