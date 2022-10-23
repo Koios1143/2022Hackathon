@@ -1,6 +1,5 @@
 ../MEMS/App/app_mems.c:94:6:MX_MEMS_Init	8	static
 ../MEMS/App/app_mems.c:116:12:MX_MEMS_Process	16	static
-../MEMS/App/app_mems.c:136:6:HAL_TIM_PeriodElapsedCallback	16	static
 ../MEMS/App/app_mems.c:149:13:MX_DataLogFusion_Init	32	static
 ../MEMS/App/app_mems.c:213:19:MX_DataLogFusion_Process	32	static
 ../MEMS/App/app_mems.c:301:13:Init_Sensors	8	static
@@ -13,4 +12,3 @@
 ../MEMS/App/app_mems.c:549:13:Pressure_Sensor_Handler	16	static
 ../MEMS/App/app_mems.c:571:13:Temperature_Sensor_Handler	16	static
 ../MEMS/App/app_mems.c:594:13:Humidity_Sensor_Handler	16	static
-../MEMS/App/app_mems.c:617:13:TIM_Config	32	static

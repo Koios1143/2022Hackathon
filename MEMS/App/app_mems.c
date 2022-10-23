@@ -89,7 +89,7 @@ static void Magneto_Sensor_Handler(TMsg *Msg);
 static void Pressure_Sensor_Handler(TMsg *Msg);
 static void Temperature_Sensor_Handler(TMsg *Msg, SensorData *SD);
 static void Humidity_Sensor_Handler(TMsg *Msg, SensorData *SD);
-static void TIM_Config(uint32_t Freq);
+//static void TIM_Config(uint32_t Freq);
 
 void MX_MEMS_Init(void)
 {
@@ -133,13 +133,13 @@ SensorData MX_MEMS_Process(void)
  *              the configuration information for TIM module.
  * @retval None
  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  if (htim->Instance == BSP_IP_TIM_Handle.Instance)
-  {
-    SensorReadRequest = 1;
-  }
-}
+//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+//{
+//  if (htim->Instance == BSP_IP_TIM_Handle.Instance)
+//  {
+//    SensorReadRequest = 1;
+//  }
+//}
 
 /* Private functions ---------------------------------------------------------*/
 /**
@@ -163,10 +163,10 @@ static void MX_DataLogFusion_Init(void)
   BSP_COM_Init(COM1);
 
   /* Initialize Timer */
-  BSP_IP_TIM_Init();
+//  BSP_IP_TIM_Init();
 
   /* Configure Timer to run with desired algorithm frequency */
-  TIM_Config(ALGO_FREQ);
+//  TIM_Config(ALGO_FREQ);
 
   /* Initialize (disabled) sensors */
   Init_Sensors();
@@ -614,24 +614,23 @@ static void Humidity_Sensor_Handler(TMsg *Msg, SensorData *SD)
  * @param  Freq the desired Timer frequency
  * @retval None
  */
-static void TIM_Config(uint32_t Freq)
-{
-  const uint32_t tim_counter_clock = 2000; /* TIM counter clock 2 kHz */
-  uint32_t prescaler_value = (uint32_t)((SystemCoreClock / tim_counter_clock) - 1);
-  uint32_t period = (tim_counter_clock / Freq) - 1;
-
-  BSP_IP_TIM_Handle.Init.Prescaler = prescaler_value;
-  BSP_IP_TIM_Handle.Init.CounterMode = TIM_COUNTERMODE_UP;
-  BSP_IP_TIM_Handle.Init.Period = period;
-  BSP_IP_TIM_Handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  BSP_IP_TIM_Handle.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&BSP_IP_TIM_Handle) != HAL_OK)
-  {
-    Error_Handler();
-  }
-}
+//static void TIM_Config(uint32_t Freq)
+//{
+//  const uint32_t tim_counter_clock = 2000; /* TIM counter clock 2 kHz */
+//  uint32_t prescaler_value = (uint32_t)((SystemCoreClock / tim_counter_clock) - 1);
+//  uint32_t period = (tim_counter_clock / Freq) - 1;
+//
+//  BSP_IP_TIM_Handle.Init.Prescaler = prescaler_value;
+//  BSP_IP_TIM_Handle.Init.CounterMode = TIM_COUNTERMODE_UP;
+//  BSP_IP_TIM_Handle.Init.Period = period;
+//  BSP_IP_TIM_Handle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+//  BSP_IP_TIM_Handle.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+//  if (HAL_TIM_Base_Init(&BSP_IP_TIM_Handle) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+//}
 
 #ifdef __cplusplus
 }
 #endif
-

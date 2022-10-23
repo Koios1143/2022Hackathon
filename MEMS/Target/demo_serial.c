@@ -260,7 +260,7 @@ int HandleMSG(TMsg *Msg)
         BSP_SENSOR_MAG_Enable();
       }
 
-      (void)HAL_TIM_Base_Start_IT(&BSP_IP_TIM_Handle);
+//      (void)HAL_TIM_Base_Start_IT(&BSP_IP_TIM_Handle);
       DataLoggerActive = 1;
 
       DataStreamingDest = Msg->Data[1];
@@ -276,7 +276,7 @@ int HandleMSG(TMsg *Msg)
       }
 
       DataLoggerActive = 0;
-      (void)HAL_TIM_Base_Stop_IT(&BSP_IP_TIM_Handle);
+//      (void)HAL_TIM_Base_Stop_IT(&BSP_IP_TIM_Handle);
 
       /* Disable all sensors */
       BSP_SENSOR_ACC_Disable();
@@ -371,7 +371,7 @@ int HandleMSG(TMsg *Msg)
         UseOfflineData = 1U;
         sensors_enabled_prev = SensorsEnabled;
         SensorsEnabled = 0xFFFFFFFFU;
-        (void)HAL_TIM_Base_Stop_IT(&BSP_IP_TIM_Handle);
+//        (void)HAL_TIM_Base_Stop_IT(&BSP_IP_TIM_Handle);
       }
       else
       {
