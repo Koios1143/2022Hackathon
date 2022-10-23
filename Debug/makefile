@@ -70,8 +70,8 @@ all: main-build
 main-build: DataLogFusion.elf secondary-outputs
 
 # Tool invocations
-DataLogFusion.elf DataLogFusion.map: $(OBJS) $(USER_OBJS) C:\STNew\DataLogFusion\STM32L073RZTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "DataLogFusion.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\STNew\DataLogFusion\STM32L073RZTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DataLogFusion.map" -Wl,--gc-sections -static -L../Middlewares/ST/STM32_MotionFX_Library/Lib --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+DataLogFusion.elf DataLogFusion.map: $(OBJS) $(USER_OBJS) C:\tmp\DataLogFusion_stable_only_2\STM32L073RZTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "DataLogFusion.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\tmp\DataLogFusion_stable_only_2\STM32L073RZTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DataLogFusion.map" -Wl,--gc-sections -static -L../Middlewares/ST/STM32_MotionFX_Library/Lib --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
